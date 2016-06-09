@@ -1,6 +1,5 @@
 package brbee;
 
-
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,13 +12,16 @@ import javax.swing.Timer;
 
 /*******************************************************************************
 *   Author: Jarek Thomas
-*   Last Edited: 02/09/2016
+* 
+*   This class is responsible for displaying the video, as well as the countdown
+*   timer.
 *******************************************************************************/
 
 public class Theatre extends javax.swing.JPanel {
     
     /***************************************************************************
     *                           DECLARE VARIABLES
+    *   NOTE: Variables marked with 'transient' will not be serialized.
     ***************************************************************************/
     private transient Controller controller;
     private int counter;
@@ -37,7 +39,7 @@ public class Theatre extends javax.swing.JPanel {
         initComponents();
         
         this.controller = controller;
-        
+        //Initiailize timer object and set callback function to StartCountdown()
         this.timer = new Timer(1000, new StartCountdown());
     }
     
@@ -153,7 +155,6 @@ public class Theatre extends javax.swing.JPanel {
     *                           TIME CONVERSION
     ***************************************************************************/
     private String timeConversion(int seconds){
-        final int MINUTES_IN_AN_HOUR = 60;
         final int SECONDS_IN_A_MINUTE = 60;
         
         int minutes = seconds / SECONDS_IN_A_MINUTE;
@@ -183,7 +184,7 @@ public class Theatre extends javax.swing.JPanel {
                 }
                 
                 stopTime();
-                controller.showCard("MAIN_MENU");
+                controller.showCard(Controller.MAIN_MENU);
             }
         }
     }
@@ -227,19 +228,24 @@ public class Theatre extends javax.swing.JPanel {
         timerLbl.setPreferredSize(new java.awt.Dimension(1280, 35));
         add(timerLbl, java.awt.BorderLayout.SOUTH);
     }// </editor-fold>//GEN-END:initComponents
-
+    /***************************************************************************
+    *                               END BUTTON
+    ***************************************************************************/
     private void endBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endBtnActionPerformed
-                if(getSong() != null){
-                    audioMediaPlayer.stopAudio();
-                }
-                if(getVideo() != null){
-                    videoMediaPlayer.stopVideo();
-                }
-                
-                stopTime();
-                controller.showCard("MAIN_MENU");
-                
-                endDialog.setVisible(false);
+        
+        //Ensures video/audio is not null before attempting to stop(). 
+        //Returns user back to main menu and makes end button invisible.        
+        if(getSong() != null){
+            audioMediaPlayer.stopAudio();
+        }
+        if(getVideo() != null){
+            videoMediaPlayer.stopVideo();
+        }
+
+        stopTime();
+        controller.showCard(Controller.MAIN_MENU);
+
+        endDialog.setVisible(false);
             
     }//GEN-LAST:event_endBtnActionPerformed
 

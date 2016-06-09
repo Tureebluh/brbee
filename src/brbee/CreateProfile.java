@@ -9,7 +9,6 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 /*******************************************************************************
 *   Author: Jarek Thomas
-*   Last Edited: 02/09/2016
 * 
 *   Class is used to save user profiles. Profiles are saved as serialized theatre
 *   objects.
@@ -232,7 +231,7 @@ public class CreateProfile extends javax.swing.JPanel {
     ***************************************************************************/
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         
-        controller.showCard("MAIN_MENU");
+        controller.showCard(Controller.MAIN_MENU);
         
         alertLbl.setText("");
         

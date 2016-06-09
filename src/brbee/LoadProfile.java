@@ -10,7 +10,6 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 /*******************************************************************************
 *   Author: Jarek Thomas
-*   Last Edited: 02/09/2016
 * 
 *   Class is used to load the users profile, which is stored locally as a serialized
 *   object.
@@ -121,9 +120,9 @@ backBtn.addActionListener(new java.awt.event.ActionListener() {
 
             try {
                 FileInputStream fileIn = new FileInputStream("Saved/" + temp + ".ser");
-                ObjectInputStream in = new ObjectInputStream(fileIn);
-                tempTheatre = (Theatre) in.readObject();
-                in.close();
+                ObjectInputStream objectIn = new ObjectInputStream(fileIn);
+                tempTheatre = (Theatre) objectIn.readObject();
+                objectIn.close();
                 fileIn.close();
             }catch(IOException i)
             {
@@ -155,7 +154,7 @@ backBtn.addActionListener(new java.awt.event.ActionListener() {
 
                 theatreObj.startTimer();
                 theatreObj.openDialog();
-                controller.showCard("THEATRE");
+                controller.showCard(Controller.THEATRE);
             } else {
                 missingFields = "No minutes selected.";
                 alertLbl.setText(missingFields);
@@ -172,7 +171,7 @@ backBtn.addActionListener(new java.awt.event.ActionListener() {
     ***************************************************************************/
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
 
-        controller.showCard("MAIN_MENU");
+        controller.showCard(Controller.MAIN_MENU);
 
     }//GEN-LAST:event_backBtnActionPerformed
 

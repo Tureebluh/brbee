@@ -2,10 +2,9 @@ package brbee;
 
 /*******************************************************************************
 *   Author: Jarek Thomas
-*   Last Edited: 02/09/2016
 * 
 *   This is the main screen the user sees. Was thrown together mostly for
-*   functionality atm. GUI needs to be done better.
+*   functionality atm. GUI needs to be done better for the program as a whole.
 *******************************************************************************/
 
 public class MainMenu extends javax.swing.JPanel {
@@ -110,20 +109,20 @@ public class MainMenu extends javax.swing.JPanel {
 
     private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed
         
-        controller.showCard("CREATE_PROFILE");
+        controller.showCard(Controller.CREATE_PROFILE);
         
     }//GEN-LAST:event_createBtnActionPerformed
 
     private void loadBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadBtnActionPerformed
         
-        controller.showCard("LOAD_PROFILE");
+        controller.showCard(Controller.LOAD_PROFILE);
         
     }//GEN-LAST:event_loadBtnActionPerformed
 
     private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
         
         
-        controller.showCard("EDIT_PROFILE");
+        controller.showCard(Controller.EDIT_PROFILE);
         
     }//GEN-LAST:event_editBtnActionPerformed
 

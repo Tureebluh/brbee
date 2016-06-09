@@ -8,7 +8,6 @@ import javax.swing.JPanel;
 
 /*******************************************************************************
 *   Author: Jarek Thomas
-*   Last Edited: 12/06/2015 
 *   
 *   Description: Responsible for maintaining the flow of the program.
 *******************************************************************************/
@@ -26,11 +25,11 @@ public class Controller {
     private SearchProfiles search;
     private Theatre theatre;
     private MainMenu mainMenu;
-    private final static String MAIN_MENU = "MAIN_MENU";
-    private final static String CREATE_PROFILE = "CREATE_PROFILE";
-    private final static String EDIT_PROFILE = "EDIT_PROFILE";
-    private final static String LOAD_PROFILE = "LOAD_PROFILE";
-    private final static String THEATRE = "THEATRE";
+    public final static String MAIN_MENU = "MAIN_MENU";
+    public final static String CREATE_PROFILE = "CREATE_PROFILE";
+    public final static String EDIT_PROFILE = "EDIT_PROFILE";
+    public final static String LOAD_PROFILE = "LOAD_PROFILE";
+    public final static String THEATRE = "THEATRE";
     
     
     public static void main(String[] args) {

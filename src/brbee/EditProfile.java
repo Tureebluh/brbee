@@ -13,7 +13,6 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 /*******************************************************************************
 *   Author: Jarek Thomas
-*   Last Edited: 02/09/2016
 * 
 *   Class is used to edit the users profile. Serialized theatre object is loaded,
 *   and any changes will overwrite the previous object.
@@ -254,7 +253,7 @@ public class EditProfile extends javax.swing.JPanel {
     ***************************************************************************/
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
 
-        controller.showCard("MAIN_MENU");
+        controller.showCard(Controller.MAIN_MENU);
 
     }//GEN-LAST:event_backBtnActionPerformed
     /***************************************************************************
